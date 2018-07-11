@@ -1,9 +1,6 @@
 
 <%= simple_form_for task do |f| %>
   <%= f.input :task_name %></br>
-  <% show_status = true if show_status.nil?
-  if show_status %>
-    <%= f.input :status, as: :boolean, checked_value: true, unchecked_value: false %>
-  <% end %>
+  
   <%= f.button :submit %>
 <% end %>

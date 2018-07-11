@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :tasks
+
+  root  "tasks#index"
+  resources :tasks do
+     get 'complete_task'
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  root  "tasks#index"
+  
   resources :teams
   resources :employees
 

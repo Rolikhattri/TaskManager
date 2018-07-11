@@ -64,6 +64,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete_task
+    
+    @task = Task.find(params[:task_id])
+    @task.update(:status => true,:completed_at=> Time.now)
+    respond_to do |format|
+      
+        format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
+        format.json { render :show, status: :ok, location: @task }
+     
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
