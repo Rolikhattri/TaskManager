@@ -1,0 +1,60 @@
+@import "bootstrap";
+
+body {
+ 
+  color: #1B415A;
+  background-image: url("shutterstock_248982643_5.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+      padding: 0 25px
+    }
+}
+
+form {
+  float:left;
+  width: 500px;
+  border-left: 10px solid #1B415A;
+  border-right: 10px solid #FFF;
+  padding: 20px;
+  margin: 10px auto;
+  background-image: -webkit-linear-gradient(left, #1B415A 50%, #FFF 50%), -webkit-linear-gradient(left, #1B415A 50%, #FFF 50%);
+  background-image: -moz-linear-gradient(left, #1B415A 50%, #FFF 50%), -moz-linear-gradient(left, #1B415A 50%, #FFF 50%);
+  background-image: -o-linear-gradient(left, #1B415A 50%, #FFF 50%), -o-linear-gradient(left, #1B415A 50%, #FFF 50%);
+  background-image: linear-gradient(to right, #1B415A 50%, #FFF 50%), linear-gradient(to right, #1B415A 50%, #FFF 50%);
+  background-position: 0 0, 0 100% ;
+  background-repeat: no-repeat;
+  background-size: 100% 10px;
+  label {
+  font-weight: bold;
+  }
+
+}
+
+.form-group textarea {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+
+.btn-default {
+  margin: 10px;
+}
+
+.pull_right{
+  float:right;
+}
+
+
+.navbar-custom{
+  background-color: #1B415A;
+  border-color: #3B5998;
+  a {
+    color: #FFF;
+  }
+  
+}
