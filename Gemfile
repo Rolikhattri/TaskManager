@@ -30,6 +30,7 @@ gem 'rails_admin', '~> 1.3'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
+gem 'time_difference'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

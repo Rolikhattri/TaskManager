@@ -21,7 +21,7 @@
             <li class="nav-item active">
               <%= link_to "Home", root_path, :class => "nav-link", :style=>'font-weight: bold;' %>
             </li>
-            <% if (current_user.admin)%>
+            <% if (current_user.admin || current_user.team_lead)%>
               <li class="nav-item">
                 <%= link_to "Admin Dashboard", rails_admin_path, :class => "nav-link", :style=>'font-weight: bold;' %>
               </li>
