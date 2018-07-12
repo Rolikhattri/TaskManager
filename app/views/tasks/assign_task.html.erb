@@ -1,0 +1,7 @@
+
+<%= simple_form_for @assign_task do |f| %>
+  <%= f.input :task_name %></br>
+  <% team_id=current_user.team_id %>
+  <%= f.input :user_id, collection: User.where("team_id=#{team_id} and id != #{current_user.id}") %>
+  <%= f.button :submit %>
+<% end %>

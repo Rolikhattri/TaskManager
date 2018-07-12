@@ -26,8 +26,12 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     
-
-    @task = Task.new(:task_name => params[:task][:task_name],:user_id=> current_user.id, :status => false)
+    if params[:task][:user_id].nil?
+      user_id = current_user.id
+    else 
+      user_id = params[:task][:user_id]
+    end
+    @task = Task.new(:task_name => params[:task][:task_name],:user_id=> user_id, :status => false)
     
     respond_to do |format|
       if @task.save
@@ -74,6 +78,12 @@ class TasksController < ApplicationController
         format.json { render :show, status: :ok, location: @task }
      
     end
+  end
+  def assign_task
+    @assign_task = Task.new()
+      
+    
+    
   end
 
   private

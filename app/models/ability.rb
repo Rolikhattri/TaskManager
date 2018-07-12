@@ -10,9 +10,6 @@ class Ability
         can :read, :dashboard         
         can :manage, :all
     end
-    if user.team_lead
-        can :access, :rails_admin       # only allow admin users to access Rails Admin
-        can :read, :all
-    end
+    
   end
 end
