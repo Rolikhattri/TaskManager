@@ -1,4 +1,4 @@
-class Ability
+class AdminAbility
     include CanCan::Ability
 
     def initialize(user)
@@ -13,6 +13,7 @@ class Ability
     if user.team_lead
         can :access, :rails_admin       # only allow admin users to access Rails Admin
         can :read, :all
+        can :manage, Task           # included in :read
     end
   end
 end
