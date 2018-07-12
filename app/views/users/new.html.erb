@@ -2,10 +2,13 @@
 <%= simple_form_for @user, url: {action: "create"} do |f| %>
   <%= f.input :email, placeholder: 'user@domain.com' %>
   <%= f.input :password, hint: false, error_html: { id: 'password_error'} %>
-  <%= f.input :password_confirmation, label: false %>
+  <%= f.input :password_confirmation %>
   <%= f.input :name %></br>
-  <%= f.input :team_id, :value => current_user.team_id %>
+  <%= f.input :team_id,:as => :hidden, input_html: { value: current_user.team_id} %>
+    <%= f.simple_fields_for :tasks do |task| %>
+        <%= task.input :task_name %>
+        <%= task.input :status,:as => :hidden, input_html: { value: false} %>
+    <% end %>
   <%= f.button :submit %>
 <% end %>
-
 

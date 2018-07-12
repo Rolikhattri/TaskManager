@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     def new
      
         @user = User.new()
+        @user.tasks.build   
     end
 
     def edit
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(:email => params[:user][:email], :password => params[:user][:password], :password_confirmation => params[:user][:password_confirmation],:team_id => params[:user][:team_id],:name => params[:user][:name])
+        @user = User.new(user_params)
         if @user.save
             redirect_to root_path, notice: "User succesfully created!" 
         else
