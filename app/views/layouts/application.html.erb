@@ -1,11 +1,14 @@
+<%= favicon_link_tag asset_path('icon3.jpg'), :rel => 'icon', :type =>  'image/jpg' %>
 <!DOCTYPE html>
 <html>
   <head>
     <title>TaskManagementSystem</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ 
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom">
@@ -34,7 +37,7 @@
                 <%= link_to "Assign Task", task_assign_task_path(current_user.id), :class => "nav-link", :style=>'font-weight: bold;' %>
               </li>
               <li class="nav-item">
-                <%= link_to "Create User", task_assign_task_path(current_user.id), :class => "nav-link", :style=>'font-weight: bold;' %>
+                <%= link_to "Create User", new_user_registration_path, :class => "nav-link", :style=>'font-weight: bold;' %>
               </li>
             <% end %>
              

@@ -32,6 +32,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
 gem 'time_difference'
 gem 'cancancan', '~> 2.2'
+gem "cocoon"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
