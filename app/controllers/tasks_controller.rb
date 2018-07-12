@@ -84,6 +84,7 @@ class TasksController < ApplicationController
     @assign_task = Task.new()
       
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
