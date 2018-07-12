@@ -27,6 +27,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     
+     UserMailer.sample_email(current_user).deliver
     if params[:task][:user_id].nil?
       user_id = current_user.id
     else 
