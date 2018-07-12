@@ -1,7 +1,11 @@
 class HardWorker
   include Sidekiq::Worker
 
-  def perform(name, count)
+  def perform(id,count)
     # Do something
+    UserMailer.sample_email(id).deliver
   end
 end
+
+      
+    
