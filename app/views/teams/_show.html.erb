@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Task name</th>
+      <th>Created @</th>
+      <th>Completed @</th>
+      <th>Time Taken</th>
+      <th>Staus</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% tasks.each do |task| %>
+      <tr>
+        <td><%= task.task_name %></td>
+        <td><%= task.created_at.strftime('%c') %></td>
+        <% if task.status == false %>
+            <td><%= "Not Completed" %></td>
+            <td><%= "---" %></td>
+            <% else %>
+            <td><%= task.completed_at.strftime('%c') %></td>
+            <td><%=TimeDifference.between(task.created_at, task.completed_at).humanize
+ %></td>
+        <% end %>
+        
+        <% if task.status == false %>
+            <td><%="Not Completed" %></td>
+            <% else %>
+            <td><%= "Task Completed" %></td>
+        <% end %>
+        <td><%= link_to 'Update', edit_task_path(task) %></td>
+        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+

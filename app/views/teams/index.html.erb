@@ -1,1 +1,21 @@
-Hi Team
+<p id="notice"><%= notice %></p>
+
+<h1><%= current_user.team.team_name %> Team Members</h1>
+
+<table class="table">
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><b>Name: <%=user.name %>&emsp;&emsp;&emsp;&emsp;Email:  <%=user.email %></b></td>
+        <%= render 'show', tasks: Task.where("user_id = #{user.id}") %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+

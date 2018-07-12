@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    
     @tasks = current_user.tasks.all
   end
 
@@ -82,8 +83,6 @@ class TasksController < ApplicationController
   def assign_task
     @assign_task = Task.new()
       
-    
-    
   end
 
   private

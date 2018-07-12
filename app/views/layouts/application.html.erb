@@ -27,6 +27,9 @@
               </li>
             <% end %>
             <% if (current_user.team_lead)%>
+            <li class="nav-item">
+                <%= link_to "My Team", teams_path, :class => "nav-link", :style=>'font-weight: bold;' %>
+              </li>
               <li class="nav-item">
                 <%= link_to "Assign Task", task_assign_task_path(current_user.id), :class => "nav-link", :style=>'font-weight: bold;' %>
               </li>
