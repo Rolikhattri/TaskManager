@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     end
 
     def new
-      
-        @user = User.new
+     
+        @user = User.new()
     end
 
     def edit
@@ -26,9 +26,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
+        @user = User.new(:email => params[:user][:email], :password => params[:user][:password], :password_confirmation => params[:user][:password_confirmation],:team_id => params[:user][:team_id],:name => params[:user][:name])
         if @user.save
-            redirect_to user_url, notice: "User succesfully created!" 
+            redirect_to root_path, notice: "User succesfully created!" 
         else
           render :new
         end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 private
 
 def user_params
-  params.require(:user).permit(:first_name, :last_name, :img_file_name, :email, :password, :password_confirmation, :birthdate)
+  params.require(:user).permit(:name, :email, :password, :password_confirmation, :team_id, :admin, :team_lead, tasks_attributes: [:id, :task_name, :status])
 end
 end
 

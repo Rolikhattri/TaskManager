@@ -1,0 +1,11 @@
+<h2>Create User</h2>
+<%= simple_form_for @user, url: {action: "create"} do |f| %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :password, hint: false, error_html: { id: 'password_error'} %>
+  <%= f.input :password_confirmation, label: false %>
+  <%= f.input :name %></br>
+  <%= f.input :team_id, :value => current_user.team_id %>
+  <%= f.button :submit %>
+<% end %>
+
+

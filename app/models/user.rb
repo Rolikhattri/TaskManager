@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 belongs_to :team
 has_many :tasks, dependent: :destroy
-
+accepts_nested_attributes_for :tasks, reject_if: :all_blank, allow_destroy: true
 end

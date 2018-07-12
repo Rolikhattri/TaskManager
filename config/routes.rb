@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  
+  resources :users_tl, :controller => 'users'
   resources :teams
   resources :employees
 
