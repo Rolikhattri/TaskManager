@@ -10,6 +10,7 @@ set :output, "#{path}/log/cron_log.log"
 every 1.minute do
   rake 'my_tasks:task1'
   command "echo 'test'"
+  rake 'my_tasks:task2'
 end
 #
 # every 4.days do

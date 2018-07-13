@@ -280,7 +280,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   cocoon
   coffee-rails (~> 4.2)
-  devise (~> 4.2)
+  devise
   figaro
   jbuilder (~> 2.5)
   jquery-rails
