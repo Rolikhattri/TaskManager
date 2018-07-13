@@ -7,6 +7,8 @@ class TasksController < ApplicationController
   def index
     
     @tasks = current_user.tasks.all
+
+    
   end
 
   # GET /tasks/1

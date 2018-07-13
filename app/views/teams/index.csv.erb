@@ -1,0 +1,5 @@
+<%- headers = ['Name', 'Task'] -%>
+<%= CSV.generate_line headers %>
+<%- @users.each do |user| -%>
+<%= CSV.generate_line([user.name, user.tasks.collect{ |u| u.task_name}]).html_safe -%>
+<%- end -%>

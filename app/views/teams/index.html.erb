@@ -8,9 +8,10 @@
       <tr>
         <td><b>Name: <%=user.name %>&emsp;&emsp;&emsp;&emsp;Email:  <%=user.email %></b></td>
         <%= render 'show', tasks: Task.where("user_id = #{user.id}") %>
-
+        
       </tr>
     <% end %>
+    <%= link_to 'Download CSV', teams_path(format: :csv) %>
   </tbody>
 </table>
 
