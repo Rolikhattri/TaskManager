@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def sample_email(id)
     emails = Team.find(id).users.collect{ |u| u.email}
-    mail(to: emails, subject: 'Sample Email')
+    mail(to: emails, subject: 'Test Email')
   end
 end
 

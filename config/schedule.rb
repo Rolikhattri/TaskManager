@@ -5,10 +5,11 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, "#{path}/log/cron_log.log"
 #
 every 1.minute do
-  runner puts "test"
+  rake 'my_tasks:task1'
+  command "echo 'test'"
 end
 #
 # every 4.days do
